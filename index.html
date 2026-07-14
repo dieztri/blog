@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝓉rini's shit</title>
+    <title>𝓉rini's blog</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="#manifesto">(some manifesto)</a></li>
+                <li><a href="#about">who the f*ck is trini?</a></li>
                 <li><a href="#inspiration">inspiration</a></li>
                 <li><a href="#creations">creations</a></li>
             </ul>
@@ -29,34 +30,116 @@
         </ol>
         <h3>things i will activly avoid</h3>
             <ul>
-                <li>utilizing any form of AI</li>
+                <li>utilizing AI</li>
                 <li>stealing intelectual property or copying others</li>
                 <li>encapsulating myself, whether it is aesthetics or mindsets</li>
                 <li>giving place to negative thoughts</li>
                 <li>generalisation and falasies</li>
             </ul>
-        </div> 
-    </main>
-    <div id="inspiration">
-        <h2>inspiration</h2>
-        <p>my take on diverse forms of media i consume</p>
-        <nav>
+        </div>
+        <div id="about">
+            <h2>who the f*ck is trini?</h2>
+            <p>hi!</p>
+            <div id="age-section">
+                <p>my age in 
+                    <select id="age-unit">
+                        <option value="days">days</option>
+                        <option value="months">months</option>
+                        <option value="years" selected>years</option>
+                    </select>
+                    :
+                    <span id="age-value">0</span>
+                </p>
+            </div>
+            
             <ul>
-                <li><a href="/literature.html">literature</a></li>
-                <li><a href="/cinema.html">cinema</a></li>
-                <li><a href="/music.html">music</a></li>
+                <h3>i love:</h3>
+                <li><a>animals</a>></li>
+                <li><a>the sea</a>></li>
+                <li><a>victorian era</a></li>
+                <li><a>crafts</a></li>
+                <li><a>gemstones</a></li>
+                <li><a>witchy stuff</a></li>
             </ul>
-        </nav>
-    </div>
-    <div id="creations">
-        <h2>creations</h2>
-        <p>sharing what i've learnt lately through diverse formats</p>
             <ul>
-                <li><a href="/essays.html">essays</a></li>
+                <h3>my hobbies are:</h3>
+                <li><a>crafts</a>></li>
+                <li><a>guitar</a></li>
+                <li><a>cooking</a></li>
             </ul>
-    </div>
+            <ul>
+                <h3>i believe in:</h3>
+                <li><a>anti-consumerism</a>></li>
+                <li><a>ecology</a></li>
+                <li><a>kindness</a></li>
+            </ul>
+        </div>
+ 
+        <div id="inspiration">
+            <h2>inspiration</h2>
+            <p>stuff i find pretty</p>
+            <a>a gallery</a>
+            <p>my take on diverse forms of media i consume</p>
+            <nav>
+                <ul>
+                    <li><a href="/literature.html">literature</a></li>
+                    <li><a href="/cinema.html">cinema</a></li>
+                    <li><a href="/music.html">music</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="creations">
+            <h2>creations</h2>
+            <p>sharing what i've learnt lately through diverse formats</p>
+                <ul>
+                    <li><a href="/essays.html">essays</a></li>
+                </ul>
+        </div>
+       </main>
+       <script>
+        const birthDate = new Date('2005-09-27');
+        const unitSelect = document.getElementById('age-unit');
+        const ageValue = document.getElementById('age-value');
+
+        function calculateAge(unit) {
+            const today = new Date();
+            let years = today.getFullYear() - birthDate.getFullYear();
+            let months = today.getMonth() - birthDate.getMonth();
+            let days = today.getDate() - birthDate.getDate();
+
+            if (days < 0) {
+                months -= 1;
+                const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                days += previousMonth.getDate();
+            }
+
+            if (months < 0) {
+                years -= 1;
+                months += 12;
+            }
+
+            if (unit === 'days') {
+                const start = new Date(birthDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+                const end = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+                return Math.floor((end - start) / (1000 * 60 * 60 * 24));
+            }
+
+            if (unit === 'months') {
+                return years * 12 + months;
+            }
+
+            return years;
+        }
+
+        function updateAge() {
+            ageValue.textContent = calculateAge(unitSelect.value);
+        }
+
+        unitSelect.addEventListener('change', updateAge);
+        updateAge();
+       </script>
 </body>
 <foooter>
-    <p>by Trini</p>
+    <p>by Trini (2026)</p>
 </foooter>
 </html>
