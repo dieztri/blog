@@ -3,7 +3,25 @@
     src: url('poti.ttf') format('truetype');
 }
 
+html {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url('wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+body {
+    margin: 1em;
+    color: #fbf0d9;
+    border: 1px solid #2F2D23;
+    padding: 0.5em
+}
+
 h1 {
     font-family: 'Poti';
     font-size: 5em;
 }
+
