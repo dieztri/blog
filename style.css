@@ -23,5 +23,8 @@ body {
 h1 {
     font-family: 'Poti';
     font-size: 5em;
+    text-align: center;
+    background-color: #2F2D23;
+    color: #fbf0d9;
 }
 
