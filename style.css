@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Poti';
+    src: url('poti.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'Poti', cursive;
+}
