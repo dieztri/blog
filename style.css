@@ -24,6 +24,8 @@ h1 {
     font-family: 'Poti';
     font-size: 5em;
     text-align: center;
+    text-shadow: 2px 2px #2F2D23;
+    margin: -0.5em;
     background-color: #2F2D23;
     color: #fbf0d9;
 }
